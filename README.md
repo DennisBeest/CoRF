@@ -1,6 +1,8 @@
 # CoRF
 Co-data moderated randomForest
 
-Instakll with:
+Install with:
+
 library(devtools)
+
 install_github("DennisBeest/CoRF")
