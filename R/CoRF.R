@@ -61,7 +61,7 @@ AUC.randomForest.Pred <- function(PredResp) 	#input: cbind(Pred,Resp)
 #' @author authors
 #' @examples
 #' #---Run CoRF:
-#' #load(LNM_Example)
+#' #data(LNM_Example)
 #' #CoDataRelation <- c("increasing","linear","decreasing")
 #' #CoRF_Fit <- CoRF(Y=RespTrain,X=TrainData,CoData=CoDataTrain,CoDataRelation=CoDataRelation,ntree=2000)
 #'
