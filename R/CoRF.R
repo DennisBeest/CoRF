@@ -250,6 +250,7 @@ CoRF <- function(Y,X,CoData,CoDataModelText=NULL,CoDataRelation=NULL,ScreenCoDat
     if(ScreenCoData==FALSE | !is.null(CoDataModelText))
     {
         CoDataNA <- CoData
+        CoDataRelationNA <- CoDataRelation
         ScreenPval <- NULL
     }
 
