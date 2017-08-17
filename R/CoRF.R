@@ -214,8 +214,6 @@ CoRF <- function(Y,X,CoData,CoDataModelText=NULL,CoDataRelation=NULL,ScreenCoDat
 
         for(cd in 1:CD)
         {
-            #cd <- 3
-
             Subset <- !is.na(CoData[,cd])
             modelPart1 <- c("VarUsed[Subset]/sum(VarUsed[Subset]) ~")
             textmodel <- paste(colnames(CoData)[cd])
@@ -489,10 +487,7 @@ CoRF <- function(Y,X,CoData,CoDataModelText=NULL,CoDataRelation=NULL,ScreenCoDat
             savetext[f] <- paste(text2,round(GammaSeq2[f],3))
             preds <- predsCand2[,f]
 
-            #SavedForests[[f+1]] <- randomForestSRC::rfsrc(Ydf ~ .,data=DF,importance=importance,nodesize=nodesize,ntree=ntree,var.used=var.used,xvar.wt=preds,mtry=ceiling(sqrt(NUsed[f])),...)
-#ptm <- proc.time()
             SavedForests[[f+1]] <- randomForestSRC::rfsrc(Ydf ~ .,data=DF,importance=importance,nodesize=nodesize,ntree=ntree,var.used="all.trees",xvar.wt=preds,mtry=ceiling(sqrt(NUsed[f])),seed=setseed)
-#print(proc.time() - ptm)
             attr(SavedForests[[f+1]],"WhichForest") <- paste("Forest with gamma",GammaSeq2[f])
 
             if(nlevels(Y)==2)
