@@ -148,10 +148,7 @@ CoRF <- function(Y,X,CoData,CoDataModelText=NULL,CoDataRelation=NULL,ScreenCoDat
     {
         print("train base RF")
 
-        #Forest <- randomForestSRC::rfsrc(Ydf ~ .,data=DF,importance=importance,nodesize=nodesize,ntree=ntree,var.used=var.used,xvar.wt=xvar.wt,mtry=mtry,...)
-#ptm <- proc.time()
         Forest <- randomForestSRC::rfsrc(Ydf ~ .,data=DF,importance=importance,nodesize=nodesize,ntree=ntree,xvar.wt=NULL,mtry=mtry,var.used="all.trees",seed=setseed)
-#print(proc.time() - ptm)
         VarUsed <- as.numeric(Forest$var.used)
 
         print("Base RF fitted")
