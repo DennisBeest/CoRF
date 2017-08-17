@@ -114,7 +114,7 @@ CoRF <- function(Y,X,CoData,CoDataModelText=NULL,CoDataRelation=NULL,ScreenCoDat
     N <- dim(X)[1]
     CD <- dim(CoData)[2]
 
-    if(is.null(ScreenPvalThreshold)) ScreenPvalThreshold <- 0.10/CD       #divide by CD for bonferroni correction
+    if(is.null(ScreenPvalThreshold)) ScreenPvalThreshold <- 0.05
     if(class(CoData)=="matrix") CoData <- data.frame(CoData)
     if(is.null(colnames(CoData))) colnames(CoData) <- gsub(" ","",paste("CoData",1:CD))
     if(!is.null(colnames(CoData))) if(sum(is.na(colnames(CoData)))>0) colnames(CoData) <- gsub(" ","",paste("CoData",1:CD))
