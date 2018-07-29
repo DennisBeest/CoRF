@@ -2,7 +2,7 @@
 #' @title Calculate the oob-auc of a rfsrc object
 #' @description Calculate the oob-auc of a rfsrc object (from randomForestSRC) using rfsrc$predicticed.oob and the binary response variable.
 #' @param rf A rfsrc object.
-#' @return Returns the oob-auc.
+#' @return Returns the oob-auc. test
 #' @export
 
 AUC.randomForest <- function(rf)
